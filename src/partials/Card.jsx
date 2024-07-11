@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import noimage from "../assets/noimage.jpg";
 
 const Card = ({ data, title }) => {
   console.log("data", data);
@@ -18,7 +19,7 @@ const Card = ({ data, title }) => {
                 ? `https://image.tmdb.org/t/p/original/${
                     item.poster_path || item.backdrop_path || item.profile_path
                   }`
-                : "noimage"
+                : noimage
             }
             alt=""
           />

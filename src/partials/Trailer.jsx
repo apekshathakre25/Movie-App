@@ -1,7 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import NotFound from "../Components/NotFound";
 
 const Trailer = () => {
@@ -18,6 +18,7 @@ const Trailer = () => {
       ></Link>
       {ytvideos ? (
         <ReactPlayer
+          controls
           height={800}
           width={1500}
           url={`https://www.youtube.com/watch?v=${ytvideos.key}`}

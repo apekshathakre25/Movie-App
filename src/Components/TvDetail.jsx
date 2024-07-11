@@ -104,7 +104,7 @@ const TvDetail = () => {
           <p className="mb-10">{info.translations.join(", ")}</p>
 
           <Link
-            className="py-5 bg-[#6565CD] rounded-lg"
+            className="py-5 px-3 bg-[#6565CD] rounded-xl"
             to={`${pathname}/trailer`}
           >
             <i class="text-xl mr-3 ri-play-fill"></i>Play Trailer
@@ -166,14 +166,18 @@ const TvDetail = () => {
       <div className="w-[100%] flex overflow-y-hidden mb-5 p-5">
         {info.details.seasons.length > 0 ? (
           info.details.seasons.map((season, i) => (
-            <div className="w-[15vh] mr-[10%]">
+            <div className="w-[15vh] mr-[2%]">
               <img
                 key={i}
-                className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[30vh] w-[15vw] object-cover"
-                src={`https://image.tmdb.org/t/p/original/${season.poster_path}`}
+                className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] w-[35vw] object-cover"
+                src={`https://image.tmdb.org/t/p/original/${
+                  season.poster_path ||
+                  season.backdrop_path ||
+                  season.profile_path
+                } `}
                 alt=""
               />
-              <h1 className="text-2xl text-zinc-300 mt-3 font-semibold">
+              <h1 className="text-2xl text-zinc-300 mt-3 font-semibold text-center">
                 {season.name}
               </h1>
             </div>
@@ -196,7 +200,7 @@ const TvDetail = () => {
       <Outlet />
     </div>
   ) : (
-    <h1>Nothing to Show</h1>
+    <h1>Loading...</h1>
   );
 };
 

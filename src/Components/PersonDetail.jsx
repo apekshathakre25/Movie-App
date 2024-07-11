@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncLoadPeople, removePeople } from "../store/actions/PeopleAction";
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import HorizontalCards from "../partials/HorizontalCards";
 import DropDown from "../partials/DropDown";
 

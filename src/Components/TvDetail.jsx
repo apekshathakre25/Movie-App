@@ -1,22 +1,28 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncLoadMovie, removeMovie } from "../store/actions/MovieAction";
-import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import { asyncLoadTV, removeTv } from "../store/actions/TvAction";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import HorizontalCards from "../partials/HorizontalCards";
 
-const MovieDetail = () => {
+const TvDetail = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
-  const { info } = useSelector((state) => state.movie);
+  const { info } = useSelector((state) => state.tv);
 
   const dispatch = useDispatch();
   console.log("info", info);
 
   useEffect(() => {
-    dispatch(asyncLoadMovie(id));
+    dispatch(asyncLoadTV(id));
     return () => {
-      dispatch(removeMovie());
+      dispatch(removeTv());
     };
   }, [id]);
 
@@ -28,7 +34,7 @@ const MovieDetail = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="relative w-screen h-[140vh] px-[10%]"
+      className="relative w-screen h-[180vh] px-[10%]"
     >
       {/* part-1 */}
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-2xl">
@@ -71,7 +77,7 @@ const MovieDetail = () => {
               info.details.original_title}
 
             <span className="text-2xl font-bold text-zinc-200">
-              ({info.details.release_date.split("-")[0]})
+              ({info.details.first_air_date.split("-")[0]})
             </span>
           </h1>
 
@@ -82,7 +88,7 @@ const MovieDetail = () => {
             <h1 className="font-semibold text-2xl w-[60px] leading-6">
               User Score
             </h1>
-            <h1>{info.details.release_date}</h1>
+            <h1>{info.details.first_air_date}</h1>
             <h1>{info.details.genres.map((genre) => genre.name).join(",")}</h1>
             <h1>{info.details.runtime}Min</h1>
           </div>
@@ -156,6 +162,29 @@ const MovieDetail = () => {
 
       {/* part-4 */}
       <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
+      <h1 className="text-3xl font-bold text-white">Seasons</h1>
+      <div className="w-[100%] flex overflow-y-hidden mb-5 p-5">
+        {info.details.seasons.length > 0 ? (
+          info.details.seasons.map((season, i) => (
+            <div className="w-[15vh] mr-[10%]">
+              <img
+                key={i}
+                className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[30vh] w-[15vw] object-cover"
+                src={`https://image.tmdb.org/t/p/original/${season.poster_path}`}
+                alt=""
+              />
+              <h1 className="text-2xl text-zinc-300 mt-3 font-semibold">
+                {season.name}
+              </h1>
+            </div>
+          ))
+        ) : (
+          <h1>Nothing to Show</h1>
+        )}
+      </div>
+
+      {/* part-5 */}
+      <hr className="mt-10 mb-5 border-none h-[2px] bg-zinc-500" />
       <h1 className="text-3xl font-bold text-white">
         Recommendations & Similar{" "}
       </h1>
@@ -164,11 +193,11 @@ const MovieDetail = () => {
           info.recommendations.length > 0 ? info.recommendations : info.similar
         }
       />
-      <Outlet/>
+      <Outlet />
     </div>
   ) : (
-    <h1>Loading...</h1>
+    <h1>Nothing to Show</h1>
   );
 };
 
-export default MovieDetail;
+export default TvDetail;

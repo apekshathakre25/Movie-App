@@ -47,7 +47,7 @@ const People = () => {
 
   return people.length > 0 ? (
     <div className="w-screen h-screen">
-      <div className="w-full px-[5%] flex items-center justify-between mb-10">
+      <div className="w-full px-[5%] flex items-center justify-start mb-10">
         <h1 className="text-2xl text-zinc-400 font-semibold">
           <i
             onClick={() => navigate(-1)}
@@ -57,11 +57,6 @@ const People = () => {
         </h1>
         <div className="flex items-center w-[80%]">
           <TopNav />
-          <DropDown
-            title="Category"
-            options={["popular"]}
-            func={(value) => setCategory(value)}
-          />
         </div>
       </div>
 

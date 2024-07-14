@@ -21,7 +21,7 @@ const PersonDetail = () => {
     };
   }, [id]);
   return info ? (
-    <div className="px-[15%] w-screen h-[150vh] bg-[#1F1E24] pb-[5%]">
+    <div className="px-[15%] w-screen h-[170vh] bg-[#1F1E24] pb-[5%]">
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-2xl">
         <Link
           onClick={() => navigate(-1)}
@@ -96,7 +96,9 @@ const PersonDetail = () => {
             {info.details.name}
           </h1>
           <h1 className="text-xl text-zinc-400 font-semibold">Overview</h1>
-          <p className="text-zinc-400 mt-3">{info.details.biography}</p>
+          <p className="text-zinc-400 mt-3">
+            {info.details.biography.slice(0, 400)} more...
+          </p>
 
           <h1 className="text-lg text-zinc-400 font-semibold mt-5">Summary</h1>
           <HorizontalCards data={info.combinedCredits.cast} />

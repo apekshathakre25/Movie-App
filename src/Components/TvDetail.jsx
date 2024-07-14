@@ -34,7 +34,7 @@ const TvDetail = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="relative w-screen h-[180vh] px-[10%]"
+      className="relative w-screen h-[200vh] px-[10%]"
     >
       {/* part-1 */}
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-2xl">

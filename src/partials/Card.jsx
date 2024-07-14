@@ -5,7 +5,7 @@ import noimage from "../assets/noimage.jpg";
 const Card = ({ data, title }) => {
   console.log("data", data);
   return (
-    <div className="flex flex-wrap w-full h-full px-[5%] bg-[#1F1E24]">
+    <div className="flex flex-wrap w-full h-full px-[5%] bg-[#1F1E24] justify-center">
       {data.map((item, index) => (
         <Link
           to={`/${item.media_type || title}/details/${item.id}`}
@@ -23,14 +23,14 @@ const Card = ({ data, title }) => {
             }
             alt=""
           />
-          <h1 className="text-2xl text-zinc-300 mt-3 font-semibold">
+          <h1 className="text-xl text-zinc-300 mt-3 font-semibold">
             {item.name ||
               item.title ||
               item.original_name ||
               item.original_title}
           </h1>
           {item.vote_average && (
-            <div className="absolute right-[-10%] bottom-[15%] text-white w-[5vh] text-xl font-semibold h-[5vh] rounded-full flex justify-center items-center bg-yellow-600">
+            <div className="absolute right-[-8%] bottom-[20%] text-white w-[6vh] text-xl font-semibold h-[6vh] rounded-full flex justify-center items-center bg-yellow-600">
               {(item.vote_average * 10).toFixed()} <p>%</p>
             </div>
           )}

@@ -50,7 +50,7 @@ const Trending = () => {
 
   return trending.length > 0 ? (
     <div className="w-screen h-screen">
-      <div className="w-full px-[5%] flex items-center justify-between">
+      <div className="w-full px-[5%] flex items-center justify-between mb-10">
         <h1 className="text-2xl text-zinc-400 font-semibold">
           <i
             onClick={() => navigate(-1)}
@@ -63,7 +63,7 @@ const Trending = () => {
           <DropDown
             title="Category"
             options={["movie", "tv", "all"]}
-            func={(value) => setCategory(value)}
+            func={(value) => setCategory(value)} 
           />
           <div className="w-[2%]"></div>
           <DropDown

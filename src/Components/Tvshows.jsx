@@ -47,7 +47,7 @@ const Tvshows = () => {
 
   return tvshows.length > 0 ? (
     <div className="w-screen h-screen">
-      <div className="w-full px-[5%] flex items-center justify-between">
+      <div className="w-full px-[5%] flex items-center justify-between mb-10">
         <h1 className="text-2xl text-zinc-400 font-semibold">
           <i
             onClick={() => navigate(-1)}
@@ -71,7 +71,7 @@ const Tvshows = () => {
         hasMore={hasMore}
         loader={<Loading />}
       >
-        <Card data={tvshows} title="tv"/>
+        <Card data={tvshows} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (

@@ -4,7 +4,7 @@ import noimage from "../assets/noimage.jpg";
 
 const HorizontalCards = ({ data }) => {
   return (
-    <div className="w-[100%] flex overflow-y-hidden mb-5 p-5">
+    <div className="w-[100%] flex overflow-y-hidden mb-4 p-4">
       {data.length > 0 ? (
         data.map((item, index) => (
           <Link
@@ -25,7 +25,7 @@ const HorizontalCards = ({ data }) => {
             />
 
             <div className="text-white p-3 h-[45%] overflow-y-auto">
-              <h1 className="text-xl font-semibold">
+              <h1 className="text-lg font-semibold">
                 {item.title ||
                   item.name ||
                   item.original_name ||
@@ -33,7 +33,7 @@ const HorizontalCards = ({ data }) => {
               </h1>
               <p className="">
                 {item.overview.slice(0, 50)}...
-                <span className="text-zinc-600">More</span>
+                <span className="text-zinc-600 text-xs">More</span>
               </p>
             </div>
           </Link>

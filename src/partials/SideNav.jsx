@@ -50,10 +50,16 @@ function SideNav() {
         <h1 className="text-white font-semibold text-xl mt-5 mb-5">
           Website Information
         </h1>
-        <Link className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300">
+        <Link
+          to="/about"
+          className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300"
+        >
           <i className="mr-2 ri-information-2-fill"></i>About
         </Link>
-        <Link className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300">
+        <Link
+          to="/contact"
+          className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300"
+        >
           <i className="mr-2 ri-phone-fill"></i> Contact
         </Link>
       </nav>

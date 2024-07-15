@@ -52,7 +52,6 @@ function SideNav() {
         </h1>
         <Link
           to="/about"
-          target="_blank"
           className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300"
         >
           <i className="mr-2 ri-information-2-fill"></i>About

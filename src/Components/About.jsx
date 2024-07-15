@@ -28,7 +28,7 @@ const About = () => {
           <p className="text-white text-[40px] mt-10 font-semibold">
             The MOVIE-APP Advantage
           </p>
-          <div className="flex justify-center gap-5">
+          <div className="flex justify-center gap-5 ">
             <p className="text-white mt-5 text-[40px] text-red-700 font-bold">
               1
             </p>
@@ -42,7 +42,7 @@ const About = () => {
             <p className="text-white mt-5 text-[40px] text-red-700 font-bold">
               2
             </p>
-            <p className="text-white text-[20px] mt-5 font-semibold w-[75%]">
+            <p className="text-white text-[20px] mt-5 font-semibold w-[75%] mb-10">
               we officially support 39 languages we also have extensive regional
               data
             </p>

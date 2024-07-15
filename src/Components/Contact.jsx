@@ -5,6 +5,13 @@ const Contact = () => {
   const navigate = useNavigate();
   return (
     <>
+      <h1 className="text-2xl text-zinc-400 font-semibold mt-10 ml-10">
+        <i
+          onClick={() => navigate("/")}
+          className="hover:text-[#6565CD] ri-arrow-left-line"
+        ></i>
+        Contact
+      </h1>
       <div className="w-screen h-screen flex p-10 justify-around">
         <div className="shadow-[8px_17px_38px_2px] w-[20%] h-[60%] bg-white rounded-lg mx-10 text-black flex flex-col items-center p-5">
           <div className="bg-cyan-400 w-full p-4 mb-4">
@@ -38,7 +45,10 @@ const Contact = () => {
           </p>
           <p className="mt-8 font-semibold text-xl mb-2">General Inquiry</p>
           <hr className="border-red-200" />
-          <p className="mt-2">If you have something else (non sales related) to go over, feel free to contact us directly</p>
+          <p className="mt-2">
+            If you have something else (non sales related) to go over, feel free
+            to contact us directly
+          </p>
         </div>
       </div>
     </>

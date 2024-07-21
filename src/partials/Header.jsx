@@ -13,11 +13,11 @@ const Header = ({ data }) => {
       }}
       className="w-full h-[50vh] flex flex-col justify-end items-start p-[5%]"
     >
-      <h1 className="text-5xl font-black text-white">
+      <h1 className="text-2xl lg:text-5xl font-black text-white">
         {" "}
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
-      <p className="w-1/2 mt-3 text-white mb-3">
+      <p className="w-full lg:w-[80%] mt-3 text-white mb-3">
         {data.overview.slice(0, 200)}...
         <Link
           to={`/${data.media_type}/details/${data.id}`}
@@ -34,7 +34,7 @@ const Header = ({ data }) => {
       </p>
       <Link
         to={`/${data.media_type}/details/${data.id}/trailer`}
-        className="bg-[#6556CD] p-4 rounded text-white font-semibold mt-5"
+        className="p-2 rounded-lg bg-[#6556CD] lg:p-4 lg:rounded text-white font-semibold mt-5"
       >
         Watch Trailer
       </Link>

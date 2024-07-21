@@ -48,12 +48,14 @@ const Home = () => {
   return wallpaper && trending ? (
     <>
       <SideNav />
-      <div className="w-[80%] h-full overflow-auto overflow-x-hidden">
+      <div className="w-[100%] lg:w-[80%] h-full overflow-auto overflow-x-hidden">
         <TopNav />
         <Header data={wallpaper} />
 
-        <div className="flex justify-between p-5">
-          <h1 className="text-3xl text-zinc-400 font-semibold">Trending</h1>
+        <div className="gap-5 flex lg:justify-between p-5">
+          <h1 className="text-2xl lg:text-3xl text-zinc-400 font-semibold">
+            Trending
+          </h1>
           <DropDown
             title="Filter"
             options={["tv", "movie", "all"]}

@@ -25,8 +25,9 @@ function TopNav() {
   }, [query]);
 
   return (
-    <div className="z-[100] w-[50%] h-[10vh] relative flex mx-auto items-center">
+    <div className="z-[100] w-[90%] lg:w-[50%] h-[10vh] relative flex mx-auto items-center">
       <i className="text-3xl text-zinc-400 ri-search-line"></i>
+     
 
       <input
         onChange={(e) => setQuery(e.target.value)}
@@ -41,6 +42,7 @@ function TopNav() {
           className="absolute text-3xl text-zinc-400 ri-close-line right-0"
         ></i>
       )}
+       <i className="text-3xl text-zinc-400 ri-menu-line lg:hidden"></i>
 
       {search && (
         <div className="w-[80%] max-h-[50vh] bg-zinc-200 absolute top-[100%] left-[5%] overflow-auto">

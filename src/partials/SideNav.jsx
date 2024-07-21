@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function SideNav() {
   return (
-    <div className="w-[20%] h-full border-r-2 border-zinc-300 p-8 overflow-y-hidden">
+    <div className="hidden lg:block w-[20%] lg:h-full lg:border-r-2 lg:border-zinc-300 p-8 overflow-y-hidden">
       <h1 className="text-2xl text-white font-bold">
         <i className="ri-tv-fill text-[#6556CD] mr-2"></i>
-        <span className="text-2xl">MOVIE-APP</span>
+        <span className="text-xl lg:text-2xl">MOVIE-APP</span>
       </h1>
       <nav className="flex flex-col text-zinc-400 text-xl">
         <h1 className="text-white font-semibold text-xl mt-8 mb-5">
@@ -22,7 +22,7 @@ function SideNav() {
           to="/popular"
           className="hover:bg-[#6556CD] p-4 hover:text-white rounded-lg duration-300"
         >
-          <i className=" mr-2 ri-bard-fill"></i>Popular
+          <i className="mr-2 ri-bard-fill"></i>Popular
         </Link>
         <Link
           to="/movie"
